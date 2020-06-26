@@ -8,6 +8,6 @@
 // @include      https://store.steampowered.com/app/*
 // @include      https://store.steampowered.com/agecheck/*
 // @updateURL    https://raw.githubusercontent.com/lukasz-brzozko/steam-queue-autoclicker/master/meta.js
-// @downloadURL  https://raw.githubusercontent.com/lukasz-brzozko/steam-queue-autoclicker/master/script.js
+// @downloadURL  https://raw.githubusercontent.com/lukasz-brzozko/steam-queue-autoclicker/master/user.js
 // @grant        none
 // ==/UserScript==

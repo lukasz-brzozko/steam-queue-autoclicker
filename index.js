@@ -13,7 +13,7 @@
 (function () {
   "use strict";
   var cardsCounter = document.querySelector("#header_notification_link span");
-  var queriesNumber = 3;
+  var queriesNumber = 1;
   if (parseInt(cardsCounter.textContent) < queriesNumber) {
     var currentLink;
     var startQuery = setInterval(() => {

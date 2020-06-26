@@ -3,7 +3,7 @@
 // @namespace    https://github.com/lukasz-brzozko/steam-queue-autoclicker
 // @version      0.1.2
 // @description  Automatyczne przeglądanie kolejki odkryć
-// @author       pr0sto
+// @author       Łukasz Brzózko
 // @include      https://store.steampowered.com/explore/*
 // @include      https://store.steampowered.com/app/*
 // @include      https://store.steampowered.com/agecheck/*
@@ -14,16 +14,16 @@
 
 (function () {
   "use strict";
-  var cardsCounter = document.querySelector("#header_notification_link span");
-  var queriesNumber = 1;
+  const cardsCounter = document.querySelector("#header_notification_link span");
+  const queriesNumber = 1;
   if (parseInt(cardsCounter.textContent) < queriesNumber) {
-    var currentLink;
-    var startQuery = setInterval(() => {
+    const currentLink;
+    const startQuery = setInterval(() => {
       if (currentLink !== location.href) {
         currentLink = location.href;
-        var nextBtn = document.querySelector(".next_in_queue_content");
-        var nextQueryBtn = document.querySelector("#refresh_queue_btn");
-        var nextQueryBtn2 = document.querySelector(
+        const nextBtn = document.querySelector(".next_in_queue_content");
+        const nextQueryBtn = document.querySelector("#refresh_queue_btn");
+        const nextQueryBtn2 = document.querySelector(
           ".btnv6_blue_hoverfade.btn_medium.right"
         );
         if (!nextBtn && nextQueryBtn) {

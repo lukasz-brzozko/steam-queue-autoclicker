@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam kolejka odkryć
 // @namespace    https://github.com/lukasz-brzozko/steam-queue-autoclicker
-// @version      0.1.2
+// @version      0.1.3
 // @description  Automatyczne przeglądanie kolejki odkryć
 // @author       Łukasz Brzózko
 // @include      https://store.steampowered.com/explore/*

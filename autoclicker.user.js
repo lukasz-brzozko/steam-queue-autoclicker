@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Steam kolejka odkryć
 // @namespace    https://github.com/lukasz-brzozko/steam-queue-autoclicker
-// @version      0.1.2
+// @version      0.1.3
 // @description  Automatyczne przeglądanie kolejki odkryć
 // @author       Łukasz Brzózko
 // @include      https://store.steampowered.com/explore/*
@@ -14,11 +14,15 @@
 
 (function () {
   "use strict";
-  const cardsCounter = document.querySelector("#header_notification_link span");
-  const queriesNumber = 1;
-  if (parseInt(cardsCounter.textContent) < queriesNumber) {
-    const currentLink;
-    const startQuery = setInterval(() => {
+  let queryInterval;
+  const queueExploreSubtext = document.querySelector(".subtext");
+
+  if (
+    !queueExploreSubtext ||
+    !queueExploreSubtext.textContent.includes("jutro")
+  ) {
+    let currentLink;
+    queryInterval = setInterval(() => {
       if (currentLink !== location.href) {
         currentLink = location.href;
         const nextBtn = document.querySelector(".next_in_queue_content");
@@ -36,7 +40,7 @@
       }
     }, 1000);
   } else {
-    clearInterval(startQuery);
+    clearInterval(queryInterval);
     alert("Karty zostały wydropione :)");
   }
 })();

@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Steam kolejka odkryć
+// @name         Steam Discovery Queue Autoclicker
 // @namespace    https://github.com/lukasz-brzozko/steam-queue-autoclicker
-// @version      0.1.3
-// @description  Automatyczne przeglądanie kolejki odkryć
+// @version      0.1.4
+// @description  Holiday cards farming script used for Steam Discovery Queue
 // @author       Łukasz Brzózko
 // @include      https://store.steampowered.com/explore/*
 // @include      https://store.steampowered.com/app/*
@@ -12,14 +12,35 @@
 // @grant        none
 // ==/UserScript==
 
+function getTomorrowWord(lang) {
+  let tomorrowWord = "";
+
+  switch (lang) {
+    case "pl":
+      tomorrowWord = "jutro";
+      break;
+
+    default:
+      tomorrowWord = "tomorrow";
+      break;
+  }
+
+  return tomorrowWord;
+}
+
 (function () {
   "use strict";
+
+  const html = document.documentElement;
+  const lang = html.getAttribute("lang");
   let queryInterval;
+
+  const tomorrowWord = getTomorrowWord(lang);
   const queueExploreSubtext = document.querySelector(".subtext");
 
   if (
     !queueExploreSubtext ||
-    !queueExploreSubtext.textContent.includes("jutro")
+    !queueExploreSubtext.textContent.includes(tomorrowWord)
   ) {
     let currentLink;
     queryInterval = setInterval(() => {
@@ -41,6 +62,6 @@
     }, 1000);
   } else {
     clearInterval(queryInterval);
-    alert("Karty zostały wydropione :)");
+    alert("All cards have been dropped :)");
   }
 })();

@@ -27,7 +27,7 @@
         currentLink = location.href;
         const nextBtn = document.querySelector(".next_in_queue_content");
         const nextQueryBtn = document.querySelector("#refresh_queue_btn");
-        const nextQueryBtn2 = document.querySelector(
+        const nextQueryBtnAlternate = document.querySelector(
           ".btnv6_blue_hoverfade.btn_medium.right"
         );
         if (!nextBtn && nextQueryBtn) {
@@ -35,7 +35,7 @@
         } else if (nextBtn && !nextQueryBtn) {
           nextBtn.click();
         } else {
-          nextQueryBtn2.click();
+          nextQueryBtnAlternate.click();
         }
       }
     }, 1000);
